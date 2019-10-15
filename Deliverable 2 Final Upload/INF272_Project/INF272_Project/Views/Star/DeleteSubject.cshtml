@@ -1,0 +1,51 @@
+﻿@model INF272_Project.ViewModels.SubjectViewModel
+
+@{
+    ViewBag.Title = "DeleteSubject";
+}
+<body style="        background-image: url('../../Content/JcG7YPZ7cvSbL6k6asXMt7Yu.jpg');
+        background-size: cover">
+    <h2>Delete Subject</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.mSubjectTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mSubjectTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mSubjectDescription)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mSubjectDescription)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.mSubjectCredits)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.mSubjectCredits)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back", "ViewSubjects")
+            </div>
+        }
+    </div>
+</body>
