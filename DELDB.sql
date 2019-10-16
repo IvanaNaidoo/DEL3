@@ -1,3 +1,6 @@
+use master
+create database StarKidz
+go
 use StarKidz
 go
 create table Parents(
@@ -25,7 +28,7 @@ Grade int not null,
 Description  VARCHAR(200))
 go
 create table MarkLevels(
-MarkID int primary key Not null,
+MarkLevelID int primary key Not null,
 Level  int not null	,
 Description VARCHAR(200))
 go
@@ -81,7 +84,7 @@ create table HomeworkQuestions(
 HomeworkID int,
 QuestionID int,
 Mark int,
-constraint FK_Question foreign key  (HomeworkID) references Homeworks(HomeworkID),foreign key (QuestionID) references Questions(QuestionID))
+constraint FK_HWQ foreign key  (HomeworkID) references Homeworks(HomeworkID),foreign key (QuestionID) references Questions(QuestionID))
 go
 create table Tests(
 TestID int primary key Not null, 
@@ -89,20 +92,21 @@ LearnerID int not null,
 Description VARCHAR(200),
 Mark int,
 TestDate date,
-constraint FK_Question foreign key  (LearnerID) references Learners(LearnerID))
+constraint FK_Tests foreign key  (LearnerID) references Learners(LearnerID))
 go
 create table TestQuestions(
 TestID int,
 QuestionID int,
 Mark int,
-constraint FK_Question foreign key  (TestID) references Tests(TestID),foreign key (QuestionID) references Questions(QuestionID))
+constraint FK_TestQuestion foreign key  (TestID) references Tests(TestID),foreign key (QuestionID) references Questions(QuestionID))
 go
 create table Reports(
+RoportID int primary key,
 LearnerID int,
 SubjectID int,
-UserID int
-MarkLevelID int
+UserID int,
+MarkLevelID int,
 ReportDate date,
-constraint FK_Question foreign key  (LearnerID) references Learners(LearnerID),foreign key (SubjectID) references Subjects(SubjectID),
- foreign key  (UserID) references Users(UserID),foreign key (MarkLevelID) references MarkLevela(MarkLevelID),
+constraint FK_Report foreign key  (LearnerID) references Learners(LearnerID),foreign key (SubjectID) references Subjects(SubjectID),
+ foreign key  (UserID) references Users(UserID),foreign key (MarkLevelID) references MarkLevels(MarkLevelID))
 go
