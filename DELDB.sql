@@ -30,7 +30,8 @@ go
 create table MarkLevels(
 MarkLevelID int primary key Not null,
 Level  int not null	,
-Description VARCHAR(200))
+Description VARCHAR(200),
+Symbol VARCHAR(1))
 go
 create table Donors(
 DonorID  int primary key Not null,
