@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="598ec203f537450c9ffe47431fd3fb9e" Name="Diagram1">
+        <EntityTypeShape EntityType="StarKidzModel.Donation" Width="1.5" PointX="11" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Donor" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Grade" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Homework" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Learner" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.MarkLevel" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Parent" Width="1.5" PointX="1.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Payment" Width="1.5" PointX="8.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Question" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Report" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Subject" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.Test" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StarKidzModel.User" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="StarKidzModel.FK__Donations__Payme__1FCDBCEB" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_Donations" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_Learners" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_Question" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_HWs" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK__Learners__UserID__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_Report" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_Tests" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK__Reports__MarkLev__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK_Users_Parents" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK__Questions__Subje__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK__Reports__Subject__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="StarKidzModel.FK__Reports__UserID__37A5467C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Donation">
+    <Key>
+      <PropertyRef Name="DonationID" />
+    </Key>
+    <Property Name="DonationID" Type="Int32" Nullable="false" />
+    <Property Name="DonorID" Type="Int32" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Donor" Relationship="Self.FK_Donation_Donor" FromRole="Donation" ToRole="Donor" />
+  </EntityType>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Donations" Relationship="Self.FK_Donation_Donor" FromRole="Donor" ToRole="Donation" />
+  </EntityType>
+  <EntityType Name="Homework">
+    <Key>
+      <PropertyRef Name="HomeworkID" />
+    </Key>
+    <Property Name="HomeworkID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Level" Type="Int32" />
+    <Property Name="Subject" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Questions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MarkAchieved" Type="Single" />
+    <Property Name="DueDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_Donation_Donor">
+    <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+    <End Role="Donation" Type="Self.Donation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donor">
+        <PropertyRef Name="DonorID" />
+      </Principal>
+      <Dependent Role="Donation">
+        <PropertyRef Name="DonorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Donations" EntityType="Self.Donation" />
+    <EntitySet Name="Donors" EntityType="Self.Donor" />
+    <EntitySet Name="Homework" EntityType="Self.Homework" />
+    <AssociationSet Name="FK_Donation_Donor" Association="Self.FK_Donation_Donor">
+      <End Role="Donor" EntitySet="Donors" />
+      <End Role="Donation" EntitySet="Donations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
