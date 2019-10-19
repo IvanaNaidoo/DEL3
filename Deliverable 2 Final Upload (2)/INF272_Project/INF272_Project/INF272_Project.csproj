@@ -156,7 +156,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DonationsController.cs" />
     <Compile Include="Controllers\GradesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeworkController.cs" />
@@ -246,6 +245,9 @@
     <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\SubjectViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="Views\Donations1Controller.cs" />
+    <Compile Include="Views\DonorsController.cs" />
+    <Compile Include="Views\Payments\PaymentsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\185MB pre image cartoon stars background.jpg" />
@@ -362,11 +364,6 @@
     <Content Include="Views\Star\DeleteSubject.cshtml" />
     <Content Include="Views\Star\ReadTest.cshtml" />
     <Content Include="Views\Star\ViewSubjects.cshtml" />
-    <Content Include="Views\Donations\Create.cshtml" />
-    <Content Include="Views\Donations\Delete.cshtml" />
-    <Content Include="Views\Donations\Details.cshtml" />
-    <Content Include="Views\Donations\Edit.cshtml" />
-    <Content Include="Views\Donations\Index.cshtml" />
     <Content Include="Views\Homework\UserHW.cshtml" />
     <Content Include="Views\Homework\UserHWResults.cshtml" />
     <Content Include="Views\Star\AddHomework.cshtml" />
@@ -387,6 +384,17 @@
     <Content Include="Views\Grades\Details.cshtml" />
     <Content Include="Views\Grades\Edit.cshtml" />
     <Content Include="Views\Grades\Index.cshtml" />
+    <Content Include="Views\Donations1\Create.cshtml" />
+    <Content Include="Views\Donations1\Details.cshtml" />
+    <Content Include="Views\Donations1\Edit.cshtml" />
+    <Content Include="Views\Donations1\Index.cshtml" />
+    <Content Include="Views\Payments\Create.cshtml" />
+    <Content Include="Views\Payments\Index.cshtml" />
+    <Content Include="Views\Donors\Create.cshtml" />
+    <Content Include="Views\Donors\Delete.cshtml" />
+    <Content Include="Views\Donors\Details.cshtml" />
+    <Content Include="Views\Donors\Edit.cshtml" />
+    <Content Include="Views\Donors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
