@@ -1,0 +1,39 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "TestResult";
+}
+<body style="        background-image: url('../../Content/jar stars.jpg');
+        background-size: cover">
+    <h1 style="font:bold; font-family:'Comic Sans MS'; color:white">STAR kidZ</h1>
+
+
+    <br />
+
+    <div style="text-align:center; background-color:midnightblue; border-color:white; border-style:ridge; border-width:3px; border-radius:25px;">
+
+        <h2 style=" font-family:'Comic Sans MS'; color:white;  text-decoration:underline;">Results</h2>
+        <h3 style="font-family:'Comic Sans MS'; color:white">Brittany, you scored:</h3>
+
+    </div>
+
+    <br />
+
+    <div style="text-align:center; background-color:midnightblue; border-color:white; border-style:ridge; border-width:3px; border-radius:25px; ">
+
+        <ol style="color:white;">
+            <li>0.02 x 100 1pt</li>
+            <li>6 x 5 0pt</li>
+            <li>15 / 3 1pt</li>
+            <li>55 / 11 1pt</li>
+            <li>10 x 10 1pt</li>
+        </ol>
+        <br />
+        <label style="color:white; font-family:'Comic Sans MS';">Total: 4 out of 5!</label>
+        <br />
+        <button onclick="@("window.location.href='" + @Url.Action("home", "Star") + "'");">Exit</button>
+
+    </div>
+
+</body>

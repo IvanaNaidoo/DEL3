@@ -1,0 +1,27 @@
+﻿
+body {
+    background-image: url('Content/WhatsApp Image 2019-08-17 at 10.02.29.jpeg');
+    background-size: cover;
+    font-family: 'Comic Sans MS';
+}
+
+reportHome {
+    background-color: midnightblue;
+    border: 1.5px dotted black;
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    width: 50%;
+    margin: auto;
+}
+
+.Reports {
+    text-align: left;
+    font-family: 'Comic Sans MS';
+    color: white;
+}
+
+.HeaderBrittany {
+    text-align: left;
+    font-family: 'Comic Sans MS';
+    color: white;
+}

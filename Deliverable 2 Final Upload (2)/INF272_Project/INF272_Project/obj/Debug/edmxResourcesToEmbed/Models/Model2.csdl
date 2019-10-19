@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StarKidzModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Donation">
+    <Key>
+      <PropertyRef Name="DonationID" />
+    </Key>
+    <Property Name="DonationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DonorID" Type="Int32" />
+    <Property Name="PaymentID" Type="Int32" />
+    <Property Name="Amount" Type="Double" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK__Donations__Payme__1FCDBCEB" FromRole="Donations" ToRole="Payments" />
+    <NavigationProperty Name="Donor" Relationship="Self.FK_Donations" FromRole="Donations" ToRole="Donors" />
+  </EntityType>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DonorID" />
+    </Key>
+    <Property Name="DonorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Donations" Relationship="Self.FK_Donations" FromRole="Donors" ToRole="Donations" />
+  </EntityType>
+  <EntityType Name="Grade">
+    <Key>
+      <PropertyRef Name="GradeID" />
+    </Key>
+    <Property Name="GradeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Grade1" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Learners" Relationship="Self.FK_Learners" FromRole="Grades" ToRole="Learners" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK_Question" FromRole="Grades" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="Homework">
+    <Key>
+      <PropertyRef Name="HomeworkID" />
+    </Key>
+    <Property Name="HomeworkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LearnerID" Type="Int32" Nullable="false" />
+    <Property Name="HomeworkDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Learner" Relationship="Self.FK_HWs" FromRole="Homeworks" ToRole="Learners" />
+  </EntityType>
+  <EntityType Name="Learner">
+    <Key>
+      <PropertyRef Name="LearnerID" />
+    </Key>
+    <Property Name="LearnerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="GradeID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Grade" Relationship="Self.FK_Learners" FromRole="Learners" ToRole="Grades" />
+    <NavigationProperty Name="Homeworks" Relationship="Self.FK_HWs" FromRole="Learners" ToRole="Homeworks" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Learners__UserID__239E4DCF" FromRole="Learners" ToRole="Users" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK_Report" FromRole="Learners" ToRole="Reports" />
+    <NavigationProperty Name="Tests" Relationship="Self.FK_Tests" FromRole="Learners" ToRole="Tests" />
+  </EntityType>
+  <EntityType Name="MarkLevel">
+    <Key>
+      <PropertyRef Name="MarkLevelID" />
+    </Key>
+    <Property Name="MarkLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Level" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Symbol" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__MarkLev__38996AB5" FromRole="MarkLevels" ToRole="Reports" />
+  </EntityType>
+  <EntityType Name="Parent">
+    <Key>
+      <PropertyRef Name="ParentID" />
+    </Key>
+    <Property Name="ParentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Parents" FromRole="Parents" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CardHolder" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CVV" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Donations" Relationship="Self.FK__Donations__Payme__1FCDBCEB" FromRole="Payments" ToRole="Donations" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="Question1" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Answer" Type="Int32" />
+    <Property Name="GradeID" Type="Int32" />
+    <Property Name="Marks" Type="Int32" />
+    <NavigationProperty Name="Grade" Relationship="Self.FK_Question" FromRole="Questions" ToRole="Grades" />
+    <NavigationProperty Name="Subject" Relationship="Self.FK__Questions__Subje__276EDEB3" FromRole="Questions" ToRole="Subjects" />
+  </EntityType>
+  <EntityType Name="Report">
+    <Key>
+      <PropertyRef Name="RoportID" />
+    </Key>
+    <Property Name="RoportID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LearnerID" Type="Int32" />
+    <Property Name="SubjectID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="MarkLevelID" Type="Int32" />
+    <Property Name="ReportDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Learner" Relationship="Self.FK_Report" FromRole="Reports" ToRole="Learners" />
+    <NavigationProperty Name="MarkLevel" Relationship="Self.FK__Reports__MarkLev__38996AB5" FromRole="Reports" ToRole="MarkLevels" />
+    <NavigationProperty Name="Subject" Relationship="Self.FK__Reports__Subject__36B12243" FromRole="Reports" ToRole="Subjects" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Reports__UserID__37A5467C" FromRole="Reports" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Subject">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Credits" Type="Int32" />
+    <NavigationProperty Name="Questions" Relationship="Self.FK__Questions__Subje__276EDEB3" FromRole="Subjects" ToRole="Questions" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__Subject__36B12243" FromRole="Subjects" ToRole="Reports" />
+  </EntityType>
+  <EntityType Name="Test">
+    <Key>
+      <PropertyRef Name="TestID" />
+    </Key>
+    <Property Name="TestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LearnerID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Mark" Type="Int32" />
+    <Property Name="TestDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Learner" Relationship="Self.FK_Tests" FromRole="Tests" ToRole="Learners" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Learners" Relationship="Self.FK__Learners__UserID__239E4DCF" FromRole="Users" ToRole="Learners" />
+    <NavigationProperty Name="Parent" Relationship="Self.FK_Users_Parents" FromRole="Users" ToRole="Parents" />
+    <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__UserID__37A5467C" FromRole="Users" ToRole="Reports" />
+  </EntityType>
+  <Association Name="FK__Donations__Payme__1FCDBCEB">
+    <End Role="Payments" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="Donations" Type="Self.Donation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payments">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="Donations">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donations">
+    <End Role="Donors" Type="Self.Donor" Multiplicity="0..1" />
+    <End Role="Donations" Type="Self.Donation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donors">
+        <PropertyRef Name="DonorID" />
+      </Principal>
+      <Dependent Role="Donations">
+        <PropertyRef Name="DonorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Learners">
+    <End Role="Grades" Type="Self.Grade" Multiplicity="1" />
+    <End Role="Learners" Type="Self.Learner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grades">
+        <PropertyRef Name="GradeID" />
+      </Principal>
+      <Dependent Role="Learners">
+        <PropertyRef Name="GradeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Question">
+    <End Role="Grades" Type="Self.Grade" Multiplicity="0..1" />
+    <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Grades">
+        <PropertyRef Name="GradeID" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="GradeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HWs">
+    <End Role="Learners" Type="Self.Learner" Multiplicity="1" />
+    <End Role="Homeworks" Type="Self.Homework" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Learners">
+        <PropertyRef Name="LearnerID" />
+      </Principal>
+      <Dependent Role="Homeworks">
+        <PropertyRef Name="LearnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Learners__UserID__239E4DCF">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Learners" Type="Self.Learner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Learners">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Report">
+    <End Role="Learners" Type="Self.Learner" Multiplicity="0..1" />
+    <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Learners">
+        <PropertyRef Name="LearnerID" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="LearnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tests">
+    <End Role="Learners" Type="Self.Learner" Multiplicity="1" />
+    <End Role="Tests" Type="Self.Test" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Learners">
+        <PropertyRef Name="LearnerID" />
+      </Principal>
+      <Dependent Role="Tests">
+        <PropertyRef Name="LearnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reports__MarkLev__38996AB5">
+    <End Role="MarkLevels" Type="Self.MarkLevel" Multiplicity="0..1" />
+    <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MarkLevels">
+        <PropertyRef Name="MarkLevelID" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="MarkLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Parents">
+    <End Role="Parents" Type="Self.Parent" Multiplicity="1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parents">
+        <PropertyRef Name="ParentID" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ParentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Questions__Subje__276EDEB3">
+    <End Role="Subjects" Type="Self.Subject" Multiplicity="1" />
+    <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="Questions">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reports__Subject__36B12243">
+    <End Role="Subjects" Type="Self.Subject" Multiplicity="0..1" />
+    <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Subjects">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reports__UserID__37A5467C">
+    <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Reports">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StarKidzEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Donations" EntityType="Self.Donation" />
+    <EntitySet Name="Donors" EntityType="Self.Donor" />
+    <EntitySet Name="Grades" EntityType="Self.Grade" />
+    <EntitySet Name="Homeworks" EntityType="Self.Homework" />
+    <EntitySet Name="Learners" EntityType="Self.Learner" />
+    <EntitySet Name="MarkLevels" EntityType="Self.MarkLevel" />
+    <EntitySet Name="Parents" EntityType="Self.Parent" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="Questions" EntityType="Self.Question" />
+    <EntitySet Name="Reports" EntityType="Self.Report" />
+    <EntitySet Name="Subjects" EntityType="Self.Subject" />
+    <EntitySet Name="Tests" EntityType="Self.Test" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Donations__Payme__1FCDBCEB" Association="Self.FK__Donations__Payme__1FCDBCEB">
+      <End Role="Payments" EntitySet="Payments" />
+      <End Role="Donations" EntitySet="Donations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donations" Association="Self.FK_Donations">
+      <End Role="Donors" EntitySet="Donors" />
+      <End Role="Donations" EntitySet="Donations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Learners" Association="Self.FK_Learners">
+      <End Role="Grades" EntitySet="Grades" />
+      <End Role="Learners" EntitySet="Learners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Question" Association="Self.FK_Question">
+      <End Role="Grades" EntitySet="Grades" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HWs" Association="Self.FK_HWs">
+      <End Role="Learners" EntitySet="Learners" />
+      <End Role="Homeworks" EntitySet="Homeworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Learners__UserID__239E4DCF" Association="Self.FK__Learners__UserID__239E4DCF">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Learners" EntitySet="Learners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Report" Association="Self.FK_Report">
+      <End Role="Learners" EntitySet="Learners" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tests" Association="Self.FK_Tests">
+      <End Role="Learners" EntitySet="Learners" />
+      <End Role="Tests" EntitySet="Tests" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reports__MarkLev__38996AB5" Association="Self.FK__Reports__MarkLev__38996AB5">
+      <End Role="MarkLevels" EntitySet="MarkLevels" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Parents" Association="Self.FK_Users_Parents">
+      <End Role="Parents" EntitySet="Parents" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Questions__Subje__276EDEB3" Association="Self.FK__Questions__Subje__276EDEB3">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Questions" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reports__Subject__36B12243" Association="Self.FK__Reports__Subject__36B12243">
+      <End Role="Subjects" EntitySet="Subjects" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reports__UserID__37A5467C" Association="Self.FK__Reports__UserID__37A5467C">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Reports" EntitySet="Reports" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
