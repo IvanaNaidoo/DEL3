@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Email";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Email</title>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 style="color:white">Email Your Report</h1>
+    <div style="background-color:midnightblue">
+        <h3 style="color:white">Please Provide the email address you would like to have your report sent to!</h3>
+        <input type="text" name="EmailAddress" />
+        <br />
+        <br />
+        <input type="submit" value="Send E-mail" onclick="@("window.location.href='" + @Url.Action("EmailConfirm", "Star") + "'");">
+
+    </div>
+
+</body>
+
+</html>
+

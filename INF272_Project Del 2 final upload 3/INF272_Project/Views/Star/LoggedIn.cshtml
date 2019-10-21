@@ -1,0 +1,57 @@
+﻿
+  
+
+
+
+
+@{
+    ViewBag.Title = "home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div align="right">
+    <input onclick="@("window.location.href='" + @Url.Action("login", "Star") + "'");" type="button" value="Logout" />
+</div>
+
+
+<img src="~/Content/WhatsApp Image 2019-08-17 at 10.02.20.jpeg" />
+
+
+<h2 style="color:white; font-family: 'Comic Sans MS'">Star Kidz Dashboard</h2>
+<div class="home">
+    <div> <button onclick="@("window.location.href='" + @Url.Action("MathTest", "Star") + "'");">Tests</button></div>
+    <br />
+    <div> <button onclick="@("window.location.href='" + @Url.Action("UserHW", "Homework") + "'");">Homework</button></div>
+    <br />
+    <div align="left">
+        <button onclick="@("window.location.href='" + @Url.Action("Report", "Star") + "'");" >My Report</button>
+    </div>
+    <br />
+    <button onclick="@("window.location.href='" + @Url.Action("myProfile", "Star") + "'");">My Profile</button>
+    <br />
+    <br />
+    <div align="left">
+        <button onclick="@("window.location.href='" + @Url.Action("Index", "Donations") + "'");">Make A Donation</button>
+    </div>
+</div>
+
+<style>
+    body {
+        background-image: url('../../Content/WhatsApp Image 2019-08-17 at 10.02.29.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .home {
+        
+        font-size: 30px;
+        margin: auto;
+        width: 50%;
+        border: 3px black;
+        border-style: solid;
+        border-width: medium;
+        padding: 10px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        font-family: 'Comic Sans MS'
+    }
+</style>
