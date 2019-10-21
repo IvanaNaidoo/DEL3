@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="598ec203f537450c9ffe47431fd3fb9e" Name="Diagram1">
+      <Diagram DiagramId="1c148598383647bd87fe75d987c281c6" Name="Diagram1">
         <EntityTypeShape EntityType="StarKidzModel.Donation" Width="1.5" PointX="11" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="StarKidzModel.Donor" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="StarKidzModel.Grade" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />

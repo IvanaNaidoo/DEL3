@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="StarKidzModelStoreContainer" CdmEntityContainer="StarKidzEntities1">
+  <EntityContainerMapping StorageEntityContainer="StarKidzModelStoreContainer" CdmEntityContainer="StarKidzEntities2">
     <EntitySetMapping Name="Donations">
       <EntityTypeMapping TypeName="StarKidzModel.Donation">
         <MappingFragment StoreEntitySet="Donations">

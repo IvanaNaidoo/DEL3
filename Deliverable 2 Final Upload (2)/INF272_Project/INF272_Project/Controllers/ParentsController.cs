@@ -12,7 +12,7 @@ namespace INF272_Project.Controllers
 {
     public class ParentsController : Controller
     {
-        private StarKidzEntities1 db = new StarKidzEntities1();
+        private StarKidzEntities2 db = new StarKidzEntities2();
 
         // GET: Parents
         public ActionResult Index()

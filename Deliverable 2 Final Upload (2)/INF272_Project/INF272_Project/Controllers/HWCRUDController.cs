@@ -12,7 +12,7 @@ namespace INF272_Project.Controllers
 {
     public class HWCRUDController : Controller
     {
-        private StarKidzEntities1 db = new StarKidzEntities1();
+        private StarKidzEntities2 db = new StarKidzEntities2();
 
         // GET: HWCRUD
         public ActionResult Index()

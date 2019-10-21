@@ -691,7 +691,7 @@ error 6004: The table 'StarKidz.dbo.TestQuestions' is referenced by a relationsh
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StarKidzEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="StarKidzEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Donations" EntityType="Self.Donation" />
           <EntitySet Name="Donors" EntityType="Self.Donor" />
           <EntitySet Name="Grades" EntityType="Self.Grade" />
@@ -763,7 +763,7 @@ error 6004: The table 'StarKidz.dbo.TestQuestions' is referenced by a relationsh
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="StarKidzModelStoreContainer" CdmEntityContainer="StarKidzEntities1">
+        <EntityContainerMapping StorageEntityContainer="StarKidzModelStoreContainer" CdmEntityContainer="StarKidzEntities2">
           <EntitySetMapping Name="Donations">
             <EntityTypeMapping TypeName="StarKidzModel.Donation">
               <MappingFragment StoreEntitySet="Donations">

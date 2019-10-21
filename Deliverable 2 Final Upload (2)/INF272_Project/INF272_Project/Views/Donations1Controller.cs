@@ -12,7 +12,7 @@ namespace INF272_Project.Views
 {
     public class Donations1Controller : Controller
     {
-        private StarKidzEntities1 db = new StarKidzEntities1();
+        private StarKidzEntities2 db = new StarKidzEntities2();
 
         // GET: Donations1
         public ActionResult Index()

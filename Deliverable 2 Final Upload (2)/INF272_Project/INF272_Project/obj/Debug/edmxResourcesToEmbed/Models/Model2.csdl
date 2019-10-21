@@ -307,7 +307,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="StarKidzEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="StarKidzEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Donations" EntityType="Self.Donation" />
     <EntitySet Name="Donors" EntityType="Self.Donor" />
     <EntitySet Name="Grades" EntityType="Self.Grade" />

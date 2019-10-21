@@ -13,10 +13,10 @@ namespace INF272_Project.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StarKidzEntities1 : DbContext
+    public partial class StarKidzEntities2 : DbContext
     {
-        public StarKidzEntities1()
-            : base("name=StarKidzEntities1")
+        public StarKidzEntities2()
+            : base("name=StarKidzEntities2")
         {
         }
     
