@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <script>
+        function myFunction() {
+            alert("You are successfully logged in!");
+        }
+    </script>
+
+<div align="right">
+    <input onclick="@("window.location.href='" + @Url.Action("adminLogin", "Star") + "'");" type="button" value="Admin Login" />
+</div>
+
+<br />
+<div align="right">
+    <input onclick="@("window.location.href='" + @Url.Action("Create", "Donations1") + "'");" type="button" value="Make A Donation" />
+</div>
+<div class="mission" style="color:springgreen">
+    <label>We strive to assist learners in receiving a quality education </label>
+    <br />
+    <label> by ensuring free access to basic learning skills </label>
+    <br />
+    <label>and subjects in the primary school phase.</label>
+</div>
+
+<div class="head">
+    <h2>Log In</h2>
+    <h4>Please log in to your existing Star Kidz account</h4>
+</div>
+<div class="main">
+
+
+    <label>Username:</label>
+    <br />
+    <input style="color:black" type="text" />
+    <br />
+    <label>Password:</label>
+    <br />
+    <input style="color:black" type="text" />
+    <br />
+    <br />
+    <button onclick=" myFunction(@("window.location.href='" + @Url.Action("home", "Star") + "'"));"  type="submit" class="main" style="color:black">Login</button>
+    <br />
+    <br />
+    <label>Dont have an account?</label>
+    <button onclick="@("window.location.href='" + @Url.Action("signup", "Star") + "'");" type="submit" class="main" style="color:black" >Sign Up</button>
+</div>
+
+
+<style>
+
+    body {
+        background-image: url('../../Content/185MB pre image cartoon stars background.jpg');
+    }
+
+    .main {
+        color: white;
+        font-size: 30px;
+        margin: auto;
+        width: 50%;
+        border: 3px black;
+        border-style: solid;
+        border-width: medium;
+        padding: 10px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        font-family: 'Sitka Heading'
+    }
+
+    .head {
+        color: white;
+        font-size: 30px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+    }
+</style>
