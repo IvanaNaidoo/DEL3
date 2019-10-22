@@ -1,0 +1,60 @@
+﻿@model IEnumerable<INF272_Project.ViewModels.TestViewModel>
+
+@{
+    ViewBag.Title = "ReadTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <body style="        background-image: url('../../Content/school-test-book-03-a_preview- (2).jpg');
+
+        background-size: cover">
+        <h2>Tests</h2>
+
+
+        <p>
+            @Html.ActionLink("Add Test", "Tests")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.mTestDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mTestMark)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.mTestDate)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mTestDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mTestMark)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mTestDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <p>
+            @Html.ActionLink("Delete Test", "DeleteTest")
+        </p>
+
+        <p>
+            @Html.ActionLink("Update Test", "UpdateTest")
+        </p>
+        <br />
+        <br />
+        <input type="submit" value="Back" onclick="@("window.location.href='" + @Url.Action("adminHome", "Star") + "'");" style="color:black">

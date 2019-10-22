@@ -40,8 +40,8 @@ namespace INF272_Project.Controllers
                     ModelState.Clear();
                     ViewBag.Message = account.FirstName + " " + account.LastName + " " + "successfully registered.";
                 }
-                return View();
-            }
+            return RedirectToAction("adminHome", "Star");
+        }
             //Login
 
             public ActionResult Login()
@@ -55,19 +55,22 @@ namespace INF272_Project.Controllers
             {
                 using (OurDBContext db = new OurDBContext())
                 {
+              
                     var usr = db.UserAccount.Single(u => u.Username == user.Username && u.Password == user.Password);
 
                     if (usr != null)
                     {
                         Session["UserID"] = usr.UserID.ToString();
                         Session["UserName"] = usr.Username.ToString();
-                        return RedirectToAction("LoggedIn");
+                        return RedirectToAction("adminHome", "Star");
                     }
                     else
                     {
                         ModelState.AddModelError("", "Username or Password is wrong.");
                     }
-                    return View();
+                
+
+                    return View(ViewBag.Message);
                 }
             }
 

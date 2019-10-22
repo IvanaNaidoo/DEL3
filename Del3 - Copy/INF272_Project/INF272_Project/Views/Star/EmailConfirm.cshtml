@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "EmailConfirm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmailConfirmation</title>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <img src="Star.jpg" width="130" height="101" alt="">
+    <h1 style="color:white">Report Sent Successfully!</h1>
+    <div style="background-color:midnightblue">
+
+        <h3 style="color:white">Brittany, Your  Report has been sent to your email.</h3>
+    
+   
+        <input onclick="@("window.location.href='" + @Url.Action("home", "Star") + "'");" type="submit" value="OK" style="float:right"/>
+        <picture style="background-image=Star.jpg"></picture>
+    </div>
+</body>
+</html>
+
+

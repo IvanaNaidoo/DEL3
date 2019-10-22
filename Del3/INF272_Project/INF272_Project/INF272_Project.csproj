@@ -161,6 +161,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeworkController.cs" />
     <Compile Include="Controllers\HWCRUDController.cs" />
+    <Compile Include="Controllers\LearnerAccountController.cs" />
     <Compile Include="Controllers\ParentsController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\QuestionsController.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Models\Learner.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LearnerAccount.cs" />
     <Compile Include="Models\MarkLevel.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -223,6 +225,7 @@
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\OurDBContext.cs" />
+    <Compile Include="Models\OurDBContextLearner.cs" />
     <Compile Include="Models\Parent.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -267,6 +270,7 @@
     <Content Include="Content\60080038-seamless-vector-pattern-with-constellations-on-black-background-astronomical-scientific-school-seaml.jpg" />
     <Content Include="Content\933808-school-backgrounds-1920x1200-images.jpg" />
     <Content Include="Content\96757071-seamless-pattern-from-a-star-shape-black-stars-on-a-white-background-vector-illustration-.jpg" />
+    <Content Include="Content\bkg-sky.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -421,10 +425,12 @@
     <Content Include="Views\Questions\Details.cshtml" />
     <Content Include="Views\Questions\Edit.cshtml" />
     <Content Include="Views\Questions\Index.cshtml" />
+    <Content Include="Views\LearnerAccount\Register.cshtml" />
+    <Content Include="Views\LearnerAccount\Login.cshtml" />
+    <Content Include="Views\LearnerAccount\Index.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
-    <Content Include="Views\Account\LoggedIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

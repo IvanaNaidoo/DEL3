@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div align="right">
-    <input onclick="@("window.location.href='" + @Url.Action("adminLogin", "Star") + "'");" type="button" value="Logout" />
+    <input onclick="@("window.location.href='" + @Url.Action("Login", "Account") + "'");" type="button" value="Logout" />
 </div>
 
 
@@ -38,6 +38,10 @@
     <br />
     <div align="left">
         <button onclick="@("window.location.href='" + @Url.Action("Index", "Donors") + "'");">View Donors</button>
+    </div>
+    <br />
+    <div align="left">
+        <button onclick="@("window.location.href='" + @Url.Action("Index", "Account") + "'");">View Users</button>
     </div>
 </div>
 

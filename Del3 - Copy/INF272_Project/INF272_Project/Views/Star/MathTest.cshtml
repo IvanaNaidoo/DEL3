@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "MathTest";
+}
+
+<body style="
+        background-size: cover; background-image: url('../../Content/WhatsApp Image 2019-08-17 at 10.02.29.jpeg');
+">
+    <h1 style="font:bold; font-family:'Comic Sans MS'; color:white">STAR kidZ</h1>
+
+
+    <br />
+
+    <div style="text-align:center; background-color:midnightblue; border-color:white; border-style:ridge; border-width:3px; border-radius:25px;">
+
+        <h2 style=" font-family:'Comic Sans MS'; color:white; text-decoration:underline;">Maths Test</h2>
+        <h3 style="font-family:'Comic Sans MS'; color:white">0,02 x 100 =</h3>
+
+    </div>
+
+    <br />
+
+    <div style="text-align:center; background-color:midnightblue; border-color:white; border-style:ridge; border-width:3px; border-radius:25px; ">
+
+        <label style="color:white; font-family:'Comic Sans MS';">Enter your answer here:</label>
+        <br />
+        <input />
+        <br />
+        <button onclick="@("window.location.href='" + @Url.Action("AnswerWrong", "Star") + "'");">Next</button>
+
+    </div>
+
+</body>
