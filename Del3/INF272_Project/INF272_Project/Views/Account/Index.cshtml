@@ -1,0 +1,93 @@
+﻿@model IEnumerable<INF272_Project.Models.UserAccount>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-image: url('../../Content/21074350-modern-white-background-seamless-patterns.jpg');
+    }
+
+    h1 {
+        color: midnightblue;
+        text-align: left;
+        font-family: 'Comic Sans MS'
+    }
+
+    h2 {
+        color: midnightblue;
+        text-align: left;
+        font-family: 'Comic Sans MS';
+    }
+
+    label {
+        color: midnightblue;
+        font-family: Calibri;
+    }
+
+    p {
+        font-size: 20px;
+        font-family: Calibri;
+        color: midnightblue;
+    }
+
+    table {
+        width: 70%;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    th {
+        background-color: midnightblue;
+        font-family: 'Comic Sans MS';
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<h2>Administrators</h2>
+
+<p>
+    @Html.ActionLink("Register Admin", "Register")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,117 @@
+﻿@model IEnumerable<INF272_Project.ViewModels.QuestionViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-image: url('../../Content/21074350-modern-white-background-seamless-patterns.jpg');
+    }
+
+    h1 {
+        color: midnightblue;
+        text-align: left;
+        font-family: 'Comic Sans MS'
+    }
+
+    h2 {
+        color: midnightblue;
+        text-align: left;
+        font-family: 'Comic Sans MS';
+    }
+
+    label {
+        color: midnightblue;
+        font-family: Calibri;
+    }
+
+    p {
+        font-size: 20px;
+        font-family: Calibri;
+        color: midnightblue;
+    }
+
+    table {
+        width: 70%;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    th {
+        background-color: midnightblue;
+        font-family: 'Comic Sans MS';
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<h2>Questions</h2>
+
+<p>
+    @Html.ActionLink("Add Question", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.QuestionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarkAllocation)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarkAllocation)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<p>
+    @Html.ActionLink("Delete Question", "Delete")
+</p>
+<br />
+<br />
+<input type="submit" value="Back" onclick="@("window.location.href='" + @Url.Action("adminHome", "Star") + "'");" style="color:black">
+
+<style>
+    body {
+        background-image: url('../../Content/933808-school-backgrounds-1920x1200-images.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: white;
+    }
+</style>

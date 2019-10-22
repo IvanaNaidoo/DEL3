@@ -1,0 +1,67 @@
+﻿
+
+@{
+    ViewBag.Title = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div align="right">
+    <input onclick="@("window.location.href='" + @Url.Action("login", "Star") + "'");"type="button" value="User Login" />
+</div>
+
+<br />
+<div align="right">
+    <input type="button" value="Make A Donation" />
+</div>
+
+<div class="head">  
+    <h2>Log In</h2>
+    <h4>Please log in to your existing Star Kidz administrator account</h4>
+</div>
+<div class="main">
+
+
+    <label>Username:</label>
+    <br />
+    <input style="color:black" type="text" />
+    <br />
+    <label>Password:</label>
+    <br />
+    <input style="color:black" type="text" />
+    <br />
+    <br />
+    <button onclick="@("window.location.href='" + @Url.Action("adminHome", "Star") + "'");" type="submit" class="main" style="color:black">Login</button>
+
+    
+</div>
+
+
+<style>
+
+    body {
+        background-image: url('../../Content/moving-stars-on-black-background_41x3vg3x__F0000.png');
+    }
+
+    .main {
+        color: white;
+        font-size: 30px;
+        margin: auto;
+        width: 50%;
+        border: 3px black;
+        border-style: solid;
+        border-width: medium;
+        padding: 10px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        font-family: 'Sitka Heading'
+    }
+
+    .head {
+        color: white;
+        font-size: 30px;
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+    }
+</style>

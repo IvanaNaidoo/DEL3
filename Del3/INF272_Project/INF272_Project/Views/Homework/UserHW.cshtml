@@ -1,0 +1,101 @@
+﻿
+
+@model List<INF272_Project.ViewModels.QuestionViewModel>
+@{
+    ViewBag.Title = "UserHW";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Homework</h2>
+
+
+
+<style>
+    body {
+        background-image: url('../../Content/21074350-modern-white-background-seamless-patterns.jpg');
+    }
+
+    h1 {
+        color: midnightblue;
+        text-align: left;
+        font-family: 'Comic Sans MS'
+    }
+
+    h2 {
+        color: midnightblue;
+        text-align: left;
+        font-family: 'Comic Sans MS';
+    }
+
+    label {
+        color: midnightblue;
+        font-family: Calibri;
+    }
+
+    p {
+        font-size: 20px;
+        font-family: Calibri;
+        color: midnightblue;
+    }
+
+    table {
+        width: 70%;
+    }
+
+    th, td {
+        padding: 15px;
+        text-align: left;
+    }
+
+    th {
+        background-color: midnightblue;
+        font-family: 'Comic Sans MS';
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+
+<h1>STAR kidZ</h1>
+<h2>Homework</h2>
+<div>
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Question</th>
+            <th>Max Marks</th>
+            <th>Answer</th>
+        </tr>
+        <tr>
+            @{ List<int> Ids = new List<int>();
+
+                foreach (var item in Model)
+                {
+                <tr>
+
+                    <td>@item.Subject</td>
+                    <td>@item.Question</td>
+                    <td>@item.Marks</td>
+                    <td><input type="text" value="" name=@item.QuestionID></td>
+                </tr>
+                Ids.Add(item.QuestionID);
+            }
+            }
+
+
+
+
+        </table>
+        <br />
+    </div>
+
+    @using (Html.BeginForm("UserHWResults", "Homework"))
+    {
+        <label>LearnerID:</label>
+        <input type="text"value="" name="id"/>
+        <input type="submit" value="Submit homework" />
+    }

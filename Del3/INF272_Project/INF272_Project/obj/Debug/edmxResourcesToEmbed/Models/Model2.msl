@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StarKidzModelStoreContainer" CdmEntityContainer="StarKidzEntities1">
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="StarKidzModel.Donation">
+        <MappingFragment StoreEntitySet="Donations">
+          <ScalarProperty Name="DonationID" ColumnName="DonationID" />
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="StarKidzModel.Donor">
+        <MappingFragment StoreEntitySet="Donors">
+          <ScalarProperty Name="DonorID" ColumnName="DonorID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Grades">
+      <EntityTypeMapping TypeName="StarKidzModel.Grade">
+        <MappingFragment StoreEntitySet="Grades">
+          <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+          <ScalarProperty Name="Grade1" ColumnName="Grade" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Homeworks">
+      <EntityTypeMapping TypeName="StarKidzModel.Homework">
+        <MappingFragment StoreEntitySet="Homeworks">
+          <ScalarProperty Name="HomeworkID" ColumnName="HomeworkID" />
+          <ScalarProperty Name="LearnerID" ColumnName="LearnerID" />
+          <ScalarProperty Name="HomeworkDate" ColumnName="HomeworkDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Learners">
+      <EntityTypeMapping TypeName="StarKidzModel.Learner">
+        <MappingFragment StoreEntitySet="Learners">
+          <ScalarProperty Name="LearnerID" ColumnName="LearnerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarkLevels">
+      <EntityTypeMapping TypeName="StarKidzModel.MarkLevel">
+        <MappingFragment StoreEntitySet="MarkLevels">
+          <ScalarProperty Name="MarkLevelID" ColumnName="MarkLevelID" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Symbol" ColumnName="Symbol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parents">
+      <EntityTypeMapping TypeName="StarKidzModel.Parent">
+        <MappingFragment StoreEntitySet="Parents">
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="StarKidzModel.Payment">
+        <MappingFragment StoreEntitySet="Payments">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+          <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
+          <ScalarProperty Name="CVV" ColumnName="CVV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Questions">
+      <EntityTypeMapping TypeName="StarKidzModel.Question">
+        <MappingFragment StoreEntitySet="Questions">
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="Question1" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="GradeID" ColumnName="GradeID" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="StarKidzModel.Report">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="RoportID" ColumnName="RoportID" />
+          <ScalarProperty Name="LearnerID" ColumnName="LearnerID" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MarkLevelID" ColumnName="MarkLevelID" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subjects">
+      <EntityTypeMapping TypeName="StarKidzModel.Subject">
+        <MappingFragment StoreEntitySet="Subjects">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Credits" ColumnName="Credits" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tests">
+      <EntityTypeMapping TypeName="StarKidzModel.Test">
+        <MappingFragment StoreEntitySet="Tests">
+          <ScalarProperty Name="TestID" ColumnName="TestID" />
+          <ScalarProperty Name="LearnerID" ColumnName="LearnerID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="TestDate" ColumnName="TestDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="StarKidzModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
